@@ -17,17 +17,16 @@ $(function (){
 		if(url&&element)
 		{
 	      	chrome.storage.local.get({urls: []}, function (result) {
-			    // the input argument is ALWAYS an object containing the queried keys
-			    // so we select the key we need
 			    var urls = result.urls;
 			    urls.push({url: url, id: element});
-			    // set the new array value to the same key
-			    chrome.storage.local.set({urls: urls}, function () {
-			        // you can use strings instead of objects
-			        // if you don't  want to define default values
-			        chrome.storage.local.get('urls', function (result) {
-			            console.log(result.urls);
-			        });
+			    chrome.storage.local.set({urls: urls}, function () {    
+			        var opt = {
+                    type: "basic",
+                    title: "Added",
+                    message: "Element was added",
+                    iconUrl: "icon.png"
+                	}
+            		chrome.notifications.create('added', opt, function () { });
 			    });
 			});
   		}

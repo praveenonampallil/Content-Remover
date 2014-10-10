@@ -3,12 +3,18 @@
 		<title>First Extension</title>
 		<script type="text/javascript" src="jquery-1.11.1.js"></script>
 		<script type="text/javascript" src="popup.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	</head>
 	<body>
-		<label for="url">URL</label>
-		<input id="url" type="text"/>
-		<label for="element">ID</label>
-		<input id="element" type="text"/>
-		<input id="addException" type="submit" value="Add"/>
+		<div class="container-fluid">
+			
+				<div class="row"><label for="url">URL</label></div>
+				<div class="row"><input id="url" type="text"  placeholder="Enter URL" /></div>
+				<div class="row"><label for="element">ID</label></div>
+				<div class="row"><input id="element" type="text"  placeholder="Enter ID" /></div>
+			
+				<div class="row"><input id="addException" type="submit" value="Add Element" class='btn btn-primary btn-xs'/></div>
+			
+		</div>
 	</body>
 </html>
