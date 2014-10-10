@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Content Remover",
+  "description": "To remove unwanted contents from webpages.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js":      ["jquery-1.11.1.js","content.js"]
+  }],
+
+  "options_page" : "options.html",
+
+  "permissions" : [
+    "tabs",
+    "<all_urls>",
+    "storage",
+    "notifications",
+    "contextMenus"
+  ]
+
+}
